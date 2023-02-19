@@ -35,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     double secHeight = ConstantWidget.getScreenPercentSize(context, 39);
     double radius = ConstantWidget.getScreenPercentSize(context, 6);
+    //final BoxFit? fit;
 
     return Scaffold(
       backgroundColor: "FFA600".toColor(),
@@ -51,34 +52,50 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 0,
         backgroundColor: Colors.transparent,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Image(
-              fit: BoxFit.fitWidth,
-              height: 100,
-              width: MediaQuery.of(context).size.width,
-              image: const AssetImage('assets/splash.png'),
-            ),
-            Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.only(top: 20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(radius),
-                  topRight: Radius.circular(radius),
-                ),
+      body: Column(
+        children: [
+          Image(
+            fit: BoxFit.fitWidth,
+            height: 100,
+            width: MediaQuery.of(context).size.width,
+            image: const AssetImage('assets/splash.png'),
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height-200,
+            width: MediaQuery.of(context).size.width,
+            margin: const EdgeInsets.only(top: 20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(radius),
+                topRight: Radius.circular(radius),
               ),
-              child: Padding(
-                padding: EdgeInsets.only(
-                    top: radius / 2, right: radius / 2, left: radius / 2),
-                child: Column(
-                  children: [
-                    Row(
+            ),
+            child: Column(
+                children: [
+                  Padding(
+              padding: EdgeInsets.only(
+                  top: radius / 2, 
+                  right: radius / 2,
+                 left: radius / 2,
+                 bottom: radius / 3),
+                  
+              child:Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [Column(
+                      children:const [
+                        Text(
+                         "sort by",
+                          ),
+                        Text(
+                          "Map view",
+                          ),
+                        ],
+                        ),
+                        Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: const [
+                        
                         Icon(Icons.map),
                         SizedBox(
                           width: 10,
@@ -86,27 +103,20 @@ class _MyHomePageState extends State<MyHomePage> {
                         Icon(Icons.tune),
                       ],
                     ),
-                    Card(
-                      elevation: 1,
-                      child: Row(
-                        children: [
-                          const Image(
-                            fit: BoxFit.fitWidth,
-                            height: 100,
-                            image: const AssetImage('assets/roof1.png'),
-                          ),
-                          Column(
-                            children: [],
-                          )
-                        ],
-                      ),
+                ]),
+                  ),
+                  FittedBox(
+                  child: Image(
+                    image: const AssetImage('assets/map.png'),
                     ),
-                  ],
-                ),
+                    fit: BoxFit.fill,
+),
+                  
+                ],
               ),
-            )
-          ],
-        ),
+            ),
+          
+        ],
       ),
     );
   }
