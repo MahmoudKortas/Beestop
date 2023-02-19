@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'constant_data.dart';
 import 'constant_widget.dart';
+import 'constant_data.dart';
+import 'block1.dart';
+import 'block.dart';
+import 'block2.dart';
+import 'block3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -86,19 +90,64 @@ class _MyHomePageState extends State<MyHomePage> {
                         Icon(Icons.tune),
                       ],
                     ),
-                    Card(
-                      elevation: 1,
-                      child: Row(
-                        children: [
-                          const Image(
-                            fit: BoxFit.fitWidth,
-                            height: 100,
-                            image: const AssetImage('assets/roof1.png'),
-                          ),
-                          Column(
-                            children: [],
-                          )
-                        ],
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    GestureDetector(
+                      child: const Image(
+                        width: double.infinity,
+                        fit: BoxFit.fitWidth,
+                        height: 100,
+                        image: AssetImage('assets/block.png'),
+                      ),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Block()),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    GestureDetector(
+                      child: const Image(
+                        width: double.infinity,
+                        fit: BoxFit.fitWidth,
+                        height: 100,
+                        image: AssetImage('assets/block1.png'),
+                      ),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Block1()),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    GestureDetector(
+                      child: const Image(
+                        width: double.infinity,
+                        fit: BoxFit.fitWidth,
+                        height: 100,
+                        image: AssetImage('assets/block2.png'),
+                      ),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Block2()),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    GestureDetector(
+                      child: const Image(
+                        width: double.infinity,
+                        fit: BoxFit.fitWidth,
+                        height: 100,
+                        image: AssetImage('assets/block3.png'),
+                      ),
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Block3()),
                       ),
                     ),
                   ],
