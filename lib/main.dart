@@ -82,12 +82,26 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Icon(Icons.map),
-                        SizedBox(
+                      children: [
+                        IconButton(
+                          onPressed: (() => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Block()),
+                              )),
+                          icon: Icon(Icons.map),
+                        ),
+                        const SizedBox(
                           width: 10,
                         ),
-                        Icon(Icons.tune),
+                        IconButton(
+                          icon: Icon(Icons.tune),
+                          onPressed: (() => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Block()),
+                              )),
+                        ),
                       ],
                     ),
                     const SizedBox(
