@@ -5,6 +5,7 @@ import 'block1.dart';
 import 'block.dart';
 import 'block2.dart';
 import 'block3.dart';
+import 'map0.dart';
 
 void main() {
   runApp(const MyApp());
@@ -87,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           onPressed: (() => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Block()),
+                                    builder: (context) => Map0(title: "Rooftop Rental",)),
                               )),
                           icon: Icon(Icons.map),
                         ),
